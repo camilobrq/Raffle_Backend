@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[PasswordResetRequest]
+(
+    [Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    [UserId] UNIQUEIDENTIFIER NOT NULL,
+    [ResetCode] VARCHAR(100) NOT NULL,
+    [ExpirationDate] DATETIME NOT NULL,
+    [Used] BIT NOT NULL DEFAULT 0,
+    CONSTRAINT FK_User_PasswordResetRequest FOREIGN KEY (UserId) REFERENCES [User](Id)
+)

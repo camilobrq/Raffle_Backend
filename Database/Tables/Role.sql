@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Role]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [Name] VARCHAR(50) NOT NULL, 
+    [Code] VARCHAR(50) NOT NULL, 
+    [CreatedOn] DATETIME NOT NULL DEFAULT GETDATE(), 
+    [LastModifiedOn] DATETIME NULL, 
+    [State] BIT NOT NULL DEFAULT 1
+)

@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[User]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    [UserName] VARCHAR(MAX) NOT NULL,	
+    [Password] VARCHAR(MAX) NOT NULL, 
+    [RoleId] UNIQUEIDENTIFIER NULL, 
+    [CreatedOn] DATETIME NOT NULL DEFAULT GETDATE(), 
+    [LastModifiedOn] DATETIME NULL, 
+    [State] BIT NOT NULL DEFAULT 1
+    
+    CONSTRAINT FK_User_Role FOREIGN KEY (RoleId) REFERENCES [dbo].[Role](Id)
+
+)
